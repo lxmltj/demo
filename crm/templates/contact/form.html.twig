@@ -1,0 +1,36 @@
+{% extends 'auth.html.twig' %}
+
+{% block content %}
+    {{ form_start(form, { 'attr' : { 'class': 'form-horizontal' } }) }}
+    {{ form_row(form.nom) }}
+    {{ form_row(form.prenom) }}
+    {{ form_row(form.email) }}
+    <div class="mt-2"><a href="javascript:checkEmail();">Validater</a></div>
+    <h3>Address</h3>
+    <ul class="addresses list-group" data-prototype='{{ form_widget(form.addresses.vars.prototype)|e('html_attr') }}'>
+        {% for addresse in form.addresses %}
+            <li class="address list-group-item">{{ form_row(addresse.addresse) }}</li>
+        {% endfor %}
+    </ul>
+    <div class="mt-4">
+        <button type="submit" class="btn btn-lg btn-dark">Submit</button>
+    </div>
+    {{ form_end(form) }}
+    <script>
+        function checkEmail() {
+            var email = $("#contact_email").val();
+            $.ajax({
+                type: "GET",
+                url: "{{ path('email_valitation') }}",
+                data: {email: email}
+            }).done(function (data) {
+                if (typeof data.status != "undefined" && data.status == "error") {
+                    if (typeof data.msg != "undefined") {
+                        alert(data.msg);
+                    }
+                }
+            });
+
+        }
+    </script>
+{% endblock %}

@@ -1,0 +1,23 @@
+# IDE settings
+.buildpath
+.externalToolBuilders/
+.project
+.settings/
+.idea
+
+# Vagrant or docker files
+/provision/.vagrant/
+/provision/ansible/playbook.retry
+/provision/ubuntu-xenial-16.04-cloudimg-console.log
+/dockers
+
+# Excluding unwanted files
+.DS_Store
+*~
+
+node_modules
+npm-debug.log
+/tmp
+# WP settings
+
+/dockers
