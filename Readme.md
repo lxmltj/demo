@@ -33,7 +33,13 @@ Composer install
 composer install
 ```
 
-Database
+Vérifier DATABASE_URL le fichier dans .env
+
+```bash
+DATABASE_URL=mysql://root:12345@db:3306/crm
+```
+
+Création de base de données
 
 ```bash
 bin/console doctrine:database:create
