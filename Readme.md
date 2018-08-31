@@ -33,7 +33,7 @@ Composer install
 composer install
 ```
 
-Vérifier DATABASE_URL le fichier dans .env
+Vérifier DATABASE_URL dans le fichier .env
 
 ```bash
 DATABASE_URL=mysql://root:12345@db:3306/crm
