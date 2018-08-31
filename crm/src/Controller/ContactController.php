@@ -93,7 +93,7 @@ class ContactController extends Controller
             foreach ($originalAddresses as $addresse) {
                 if (false === $contact->getAddresses()->contains($addresse)) {
                     $addresse->setContact(null);
-                    $entityManager->persist($addresse);
+                    //$entityManager->persist($addresse);
                     $entityManager->remove($addresse);
                 }
             }

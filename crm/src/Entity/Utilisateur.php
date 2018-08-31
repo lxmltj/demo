@@ -43,7 +43,7 @@ class Utilisateur implements UserInterface
     private $roles;
 
     /**
-     * @ORM\OneToMany(targetEntity="Contact", mappedBy="Utilisateur")
+     * @ORM\OneToMany(targetEntity="Contact", mappedBy="user")
      */
     private $contacts;
 
