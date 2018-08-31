@@ -10,7 +10,6 @@
 /provision/ansible/playbook.retry
 /provision/ubuntu-xenial-16.04-cloudimg-console.log
 /dockers
-docker-compose.yml
 
 # Excluding unwanted files
 .DS_Store

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if not form.vars.valid %}
+        <div class="alert alert-error">
+            {{ form_errors(form) }}
+        </div>
+    {% endif %}
+    {{ form_start(form, { 'attr' : { 'class': 'form-user' } }) }}
+    {{ form_row(form.username) }}
+    {{ form_row(form.plainPassword.first) }}
+    {{ form_row(form.plainPassword.second) }}
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Enregistrer</button>
+    {{ form_end(form) }}
+
+    <a class="btn btn-lg btn-default btn-block" href="{{ path('login') }}">Login</a>
+{% endblock %}

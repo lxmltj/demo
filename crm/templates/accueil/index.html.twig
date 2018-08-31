@@ -1,0 +1,41 @@
+{% extends 'auth.html.twig' %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Email</th>
+            <th>Addresses</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for contact in pagination %}
+            <tr data-id="{{ contact.id }}" class="">
+                <td>{{ contact.id }}</td>
+                <td>{{ contact.nom }}</td>
+                <td>{{ contact.prenom }}</td>
+                <td>{{ contact.email }}</td>
+                <td>
+                    <ul>
+                        {% for addresse in contact.addresses %}
+                            <li>{{ addresse.addresse }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+                <td>
+                    <a href="{{ path('contact_edit', { id: contact.id }) }}">Modifier</a> |
+                    <a href="{{ path('contact_remove', { id: contact.id }) }}">Supprimer</a>
+
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+{% endblock %}
