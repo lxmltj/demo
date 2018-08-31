@@ -18,7 +18,7 @@ class Addresse
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Contact", inversedBy="addresses", cascade={"persist","remove"})
+     * @ORM\ManyToOne(targetEntity="Contact", inversedBy="addresses")
      */
     private $contact;
 

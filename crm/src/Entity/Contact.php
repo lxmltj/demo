@@ -19,7 +19,7 @@ class Contact
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Utilisateur")
+     * @ORM\ManyToOne(targetEntity="Utilisateur", inversedBy="contacts")
      */
     private $user;
 
